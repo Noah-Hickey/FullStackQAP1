@@ -7,5 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Noah Hickey",
-  "license": "MIT"
+  "license": "MIT",
+  "bin": {
+    "generate-password": "./index.js"
+  },
+  "dependencies": {
+    "commander": "^13.1.0"
+  }
 }
