@@ -14,7 +14,7 @@ Steps
 
 4. Run in the terminal: "node index.js". (Optionally you can install globally by running "npm link" in the terminal.)
 
-5. Type "--generate password" followed by one of the options found in the message in the terminal. The options
+5. Type "generate-password" followed by one of the options found in the message in the terminal. The options
 include "--length" (followed by number of characters you want for password length), "--lowercase" for lowercase letters,
 "--uppercase" for uppercase letters, "--numbers" for numbers, or "--symbols" for symbols.
  
