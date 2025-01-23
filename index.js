@@ -12,6 +12,8 @@ const generatePassword = (length,options) => {
     if (options.uppercase) characters += uppercase;
     if (options.numbers) characters += numbers;
     if (options.symbols) characters += symbols;
+    if (options.customSymbols) characters += options.customSymbols;
+    
 
     // If no option is selected it will default to lowercase characters//
     if (!options.uppercase && !options.numbers && !options.symbols) {
@@ -39,6 +41,7 @@ program
     .option('-u, --uppercase', 'Include uppercase letters')
     .option('-n, --numbers', 'Include numbers')
     .option('-s, --symbols', 'Include special characters');
+    .option('-c, --custom-symbols <chars>', 'Include custom symbols');
 
 program.parse(process.argv);
 
