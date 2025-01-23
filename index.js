@@ -5,14 +5,15 @@ const generatePassword = (length,options) => {
     const lowercase = 'abcdefghijklmnopqrstuvwxyz'; //Lowercase characters//
     const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; //Uppercase characters//
     const numbers = '0123456789';//Numbers//
-    const symbols = '!@#$%^&*()_+[]{},./;:';//Symbools//
+    const symbols = '!@#$%^&*()_+[]{},./;:';//Symbols//
+    
 
     //Concatenating the characters//
     let characters = '';
     if (options.uppercase) characters += uppercase;
     if (options.numbers) characters += numbers;
     if (options.symbols) characters += symbols;
-    if (options.customSymbols) characters += options.customSymbols;
+   
     
 
     // If no option is selected it will default to lowercase characters//
@@ -41,9 +42,13 @@ program
     .option('-u, --uppercase', 'Include uppercase letters')
     .option('-n, --numbers', 'Include numbers')
     .option('-s, --symbols', 'Include special characters');
-    .option('-c, --custom-symbols <chars>', 'Include custom symbols');
+    
 
 program.parse(process.argv);
+
+if (program.args.includes('--help')) {
+    program.help();
+}
 
 const options = program.opts();
 const length = parseInt(options.length);
@@ -89,6 +94,8 @@ console.log(`
     Example Usage:
       \x1b[36mgenerate-password --length 12 --uppercase --numbers\x1b[0m
     `);
+
+    console.log(`If you need help please refer to READ.me attached file.`);
 
    
     
