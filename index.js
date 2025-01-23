@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const {program} = require('commander');
+const {program} = require('commander');  // Library used for building better command line interfaces //
 
 const generatePassword = (length,options) => {
     const lowercase = 'abcdefghijklmnopqrstuvwxyz'; //Lowercase characters//
