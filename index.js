@@ -8,16 +8,27 @@ const generatePassword = (length,options) => {
     const symbols = '!@#$%^&*()_+[]{},./;:';//Symbools//
 
     //Concatenating the characters//
-    let characters = lowercase + uppercase + numbers + symbols;
+    let characters = '';
     if (options.uppercase) characters += uppercase;
     if (options.numbers) characters += numbers;
     if (options.symbols) characters += symbols;
+
+    // If no option is selected it will default to lowercase characters//
+    if (!options.uppercase && !options.numbers && !options.symbols) {
+        characters += lowercase;
+    }
+
+    // If no characters are selected it will return an error message//
+    if (characters.length === 0) {
+        console.error('Error: You must select at least one character type.');
+        process.exit(1);
+    }
 
     let password= '';
     for (let i = 0; i < length; i++) {
         password += characters.charAt(Math.floor(Math.random() * characters.length));
     }
-    return password;
+     return password;
 };
 
 //CLI Options//
@@ -33,6 +44,13 @@ program.parse(process.argv);
 
 const options = program.opts();
 const length = parseInt(options.length);
+
+// Check if the length is a valid positive number //
+if (isNaN(length) || length < 1) {
+    console.error('Error: Password length must be a positive number greater than 0.');
+    process.exit(1);
+}
+
 
 //Input validation//
 
@@ -68,4 +86,6 @@ console.log(`
     Example Usage:
       \x1b[36mgenerate-password --length 12 --uppercase --numbers\x1b[0m
     `);
+
+   
     
