@@ -10,6 +10,7 @@ const generatePassword = (length,options) => {
 
     //Concatenating the characters//
     let characters = '';
+    if (options.lowercase) characters += lowercase;
     if (options.uppercase) characters += uppercase;
     if (options.numbers) characters += numbers;
     if (options.symbols) characters += symbols;
@@ -17,7 +18,7 @@ const generatePassword = (length,options) => {
     
 
     // If no option is selected it will default to lowercase characters//
-    if (!options.uppercase && !options.numbers && !options.symbols) {
+    if (!options.lowercase && !options.uppercase && !options.numbers && !options.symbols) {
         characters += lowercase;
     }
 
@@ -39,6 +40,7 @@ program
     .name('Password Generator')
     .description('A password generator CLI')
     .option('-l, --length <number>', 'length of password', '8')
+    .option('--lc, --lowercase', 'Include lowercase letters')
     .option('-u, --uppercase', 'Include uppercase letters')
     .option('-n, --numbers', 'Include numbers')
     .option('-s, --symbols', 'Include special characters');
@@ -84,6 +86,7 @@ console.log(`
     
     Options:
       \x1b[35m--length <number>\x1b[0m    Specify password length (default: 8)
+       \x1b[35m--lowercase\x1b[0m        Include lowercase letters)
       \x1b[35m--uppercase\x1b[0m         Include uppercase letters
       \x1b[35m--numbers\x1b[0m           Include numbers
       \x1b[35m--symbols\x1b[0m           Include special characters
