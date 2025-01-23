@@ -95,7 +95,7 @@ console.log(`
       \x1b[36mgenerate-password --length 12 --uppercase --numbers\x1b[0m
     `);
 
-    console.log(`If you need help please refer to READ.me attached file.`);
+    console.log(`If you need help please refer to README.md attached file.`);
 
    
     
