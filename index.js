@@ -43,7 +43,7 @@ if (isNaN(length)) {
 
 //Generate password//
 const password = generatePassword(length, options);
-console.log('Your generated password is: ${password}');
+console.log('Your generated password is: ', password);
         
 //Message for the user//
 console.log(`
@@ -66,6 +66,6 @@ console.log(`
     
     console.log(`
     Example Usage:
-      \x1b[35mgenerate-password --length 12 --uppercase --numbers\x1b[0m
+      \x1b[36mgenerate-password --length 12 --uppercase --numbers\x1b[0m
     `);
     

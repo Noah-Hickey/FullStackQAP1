@@ -1,17 +1,18 @@
 {
-  "name": "fullstackqap1",
+  "name": "qap1",
   "version": "1.0.0",
-  "description": "Password Generator CLI Application.",
+  "description": "QAP 1: Password Generator - Noah Hickey",
   "main": "index.js",
+  "bin": {
+    "generate-password": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Noah Hickey",
   "license": "MIT",
-  "bin": {
-    "generate-password": "./index.js"
-  },
+  "keywords": [],
   "dependencies": {
-    "commander": "^13.1.0"
+    "commander": "^13.0.0"
   }
 }
